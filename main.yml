@@ -1,12 +1,22 @@
 ---
-- name: aws environment
-  hosts: localhost
+- hosts: localhost
   connection: local
-  gather_facts: False
-
+  gather_facts: no
+  vars:
+    #your region
+    region: us-west-1
+    instance_ids:
+      - 'i-0ad30d2078462909f'
+      - 'i-0b5c3557abf31fc2e'
   tasks:
-
-  - name: gather instance facts 
-    ec2_instance_facts:
-      instance_ids:
-        - i-0ad30d2078462909f
+    - name: EC2 basic provisioning
+      ec2:
+        aws_access_key: 
+        aws_secret_key: 
+        instance_ids: '{{ instance_ids }}'
+        region: '{{ region }}'
+        # change running state
+        state: stopped
+        wait: True
+        vpc_subnet_id: subnet-3ec9d666
+        assign_public_ip: yes
