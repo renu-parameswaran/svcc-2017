@@ -1,0 +1,9 @@
+{
+    "User": {
+        "UserName": "svcc", 
+        "Path": "/", 
+        "CreateDate": "2017-10-07T02:58:30.913Z", 
+        "UserId": "AIDAJVQZPVUIHML3CG4VU", 
+        "Arn": "arn:aws:iam::251114817116:user/svcc"
+    }
+}
